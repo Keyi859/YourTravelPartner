@@ -29,6 +29,10 @@ public class CityService {
         return cityRepository.findByCountry_Id(countryId);
     }
 
+    public List<City> searchCities(String name) {
+        return cityRepository.findByNameContainingIgnoreCase(name);
+    }
+
     public City createCity(City city) {
         return cityRepository.save(city);
     }

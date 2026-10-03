@@ -29,6 +29,10 @@ public class CountryService {
         return countryRepository.findByIsoCode(isoCode);
     }
 
+    public List<Country> searchCountries(String name) {
+    return countryRepository.findByNameContainingIgnoreCase(name);
+    }
+
     public Country createCountry(Country country) {
         return countryRepository.save(country);
     }
