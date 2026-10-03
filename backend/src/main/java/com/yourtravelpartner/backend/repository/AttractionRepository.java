@@ -12,4 +12,6 @@ public interface AttractionRepository
     List<Attraction> findByCity_Id(Long cityId);
 
     List<Attraction> findByCategoryIgnoreCase(String category);
+
+    List<Attraction> findByNameContainingIgnoreCase(String name);
 }

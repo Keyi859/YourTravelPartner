@@ -33,6 +33,10 @@ public class AttractionService {
         return attractionRepository.findByCategoryIgnoreCase(category);
     }
 
+    public List<Attraction> searchAttractions(String name) {
+        return attractionRepository.findByNameContainingIgnoreCase(name);  
+    }
+
     public Attraction createAttraction(Attraction attraction) {
         return attractionRepository.save(attraction);
     }
